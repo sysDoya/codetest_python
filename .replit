@@ -1,3 +1,15 @@
 modules = ["python-3.11"]
+run = "python codetest/practice01.py"
 [nix]
 channel = "stable-24_05"
+
+[workflows]
+
+[[workflows.workflow]]
+name = "RUNPython"
+mode = "sequential"
+author = 38625328
+
+[[workflows.workflow.tasks]]
+task = "packager.installForLanguage"
+args = "python3"
